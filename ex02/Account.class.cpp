@@ -17,6 +17,7 @@ int		Account::_nbAccounts = 0;
 int		Account::_totalAmount = 0;
 int		Account::_totalNbDeposits = 0;
 int		Account::_totalNbWithdrawals = 0;
+int		Account::_nbCheckAmount = 0;
 
 Account::Account(int initial_deposit)
 {
@@ -111,6 +112,7 @@ void	Account::makeDeposit(int deposit)
 
 int		Account::checkAmount(void) const
 {
+	_nbCheckAmount++;
 	if (_amount < 0)
 		return (0);
 	return (1);

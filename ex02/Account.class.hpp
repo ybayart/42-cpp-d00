@@ -46,6 +46,8 @@ private:
 	int				_nbDeposits;
 	int				_nbWithdrawals;
 
+	static int		_nbCheckAmount;
+
 	Account( void );
 
 };
