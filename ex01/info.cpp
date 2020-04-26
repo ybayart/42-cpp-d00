@@ -23,7 +23,8 @@ void	add_info(Contact *elem)
 	while (++i <= 10)
 	{
 		std::cout << "| - " << arr[i] << ": ";
-		if ((std::cin >> content).eof())
+		std::getline(std::cin, content);
+		if (std::cin.eof())
 		{
 			std::cout << std::endl;
 			exit (0);
@@ -43,7 +44,7 @@ void	put_info(Contact peaple[8], int index)
 	if (index != 0)
 	{
 		i = -1;
-		std::cout << "|" << std::setfill('-') << std::setw(53) << "|\n";
+		std::cout << "|" << std::setfill('-') << std::setw(52) << "|" << std::endl;
 		std::cout << "| ";
 		std::cout << std::setfill(' ') << std::setw(10) << "index" << " | ";
 		std::cout << std::setfill(' ') << std::setw(10) << "Prenom" << " | ";
@@ -65,19 +66,25 @@ void	put_info(Contact peaple[8], int index)
 			}
 			std::cout << std::endl;
 		}
-		std::cout << "|" << std::setfill('-') << std::setw(53) << "|\n";
+		std::cout << "|" << std::setfill('-') << std::setw(52) << "|" << std::endl;
 		std::cout << "| Enter index: ";
 		if ((std::cin >> i).eof())
 		{
 			std::cout << std::endl;
 			exit (0);
 		}
-		if (i <= index - 1)
+		if (std::cin.good() && i >= 0 && i <= index - 1)
 		{
 			j = -1;
 			while (++j <= 10)
 				std::cout << "| - " << arr[j] << ": " << peaple[i].getField(j) << std::endl;
 		}
+		else
+		{
+			std::cin.clear();
+			std::cout << "| Invalid index" << std::endl;
+		}
+		std::cin.ignore(10000, '\n');
 	}
 	else
 		std::cout << "| No entry" << std::endl;

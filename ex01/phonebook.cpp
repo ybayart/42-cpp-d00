@@ -22,7 +22,8 @@ int		main(void)
 	while (1)
 	{
 		std::cout << "> ";
-		if ((std::cin >> cmd).eof())
+		getline(std::cin, cmd, '\n');
+		if (std::cin.eof())
 		{
 			std::cout << std::endl;
 			return (0);
@@ -35,6 +36,8 @@ int		main(void)
 		else if (cmd == "SEARCH")
 			put_info(peaple, index);
 		else if (cmd == "EXIT")
-			return (0);
+			break ;
+		else if (cmd.empty() == false)
+			std::cout << "| Unknown command `" << cmd << "`" << std::endl;
 	}
 }
