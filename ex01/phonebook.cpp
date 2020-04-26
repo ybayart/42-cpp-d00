@@ -22,7 +22,7 @@ int		main(void)
 	while (1)
 	{
 		std::cout << "> ";
-		getline(std::cin, cmd, '\n');
+		std::getline(std::cin, cmd);
 		if (std::cin.eof())
 		{
 			std::cout << std::endl;
