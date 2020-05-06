@@ -6,7 +6,7 @@
 /*   By: ybayart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 17:56:54 by ybayart           #+#    #+#             */
-/*   Updated: 2020/01/07 23:51:17 by ybayart          ###   ########.fr       */
+/*   Updated: 2020/05/06 04:49:36 by hexa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string>
 # include <iostream>
 # include <iomanip>
+# include <cstdlib>
 
 void	add_info(Contact *elem);
 void	put_info(Contact peaple[8], int i);
